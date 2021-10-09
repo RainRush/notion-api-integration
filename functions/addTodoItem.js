@@ -4,13 +4,7 @@ exports.handler = async (event) => {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
   const databaseId = process.env.NOTION_TODO_DATABASE_ID;
 
-  console.log('event', event);
-
-  const parsedBody = JSON.parse(event.body);
-
-  console.log('parsedBody', parsedBody);
-  const { message } = parsedBody;
-  console.log('message', message);
+  const { message } = JSON.parse(event.body);
 
   const {
     title,
