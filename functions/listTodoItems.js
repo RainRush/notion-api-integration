@@ -1,6 +1,6 @@
 const { Client } = require('@notionhq/client');
 
-exports.handler = async ({ databaseId }) => {
+exports.handler = async () => {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
   const databaseId = process.env.NOTION_TODO_DATABASE_ID;
 
