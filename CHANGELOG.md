@@ -1,3 +1,9 @@
+## [1.2.0] - 2021-10-09
+
+### Added
+
+- Setup `cors` for the endpoints
+
 ## [1.1.0] - 2021-10-09
 
 ### Added
