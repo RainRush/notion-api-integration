@@ -11,12 +11,20 @@ provider:
 functions:
   addTodoItem:
     handler: functions/addTodoItem.handler
-    memorySize: 512
-    timeout: 30
+    memorySize: 256
+    timeout: 15
     events:
       - httpApi:
-          path: /todo-item
+          path: /todo-items
           method: post
+  listTodoItems:
+    handler: functions/listTodoItems.handler
+    memorySize: 1024
+    timeout: 15
+    events:
+      - httpApi:
+          path: /todo-items
+          method: get
 
 plugins:
   - serverless-offline
