@@ -10,7 +10,21 @@ exports.handler = async () => {
     });
     const { results } = response;
     console.log(results.length);
-    return response;
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+        'Access-Control-Allow-Credentials': true, // Required for cookies, authorization headers with HTTPS
+      },
+      // update to use the correct response
+      body: JSON.stringify(
+        {
+          message: 'Test response',
+        },
+        null,
+        2
+      ),
+    };
   } catch (e) {
     console.error(e.body);
   }
