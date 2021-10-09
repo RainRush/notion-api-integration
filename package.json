@@ -1,0 +1,32 @@
+{
+  "name": "notion-api-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "cross-env NODE_ENV=development babel-node src"
+  },
+  "author": "Daniel Hu",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^0.4.0",
+    "config": "^3.3.6",
+    "serverless-dotenv-plugin": "^3.10.0",
+    "serverless-offline": "^8.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

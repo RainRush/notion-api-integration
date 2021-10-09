@@ -1,0 +1,27 @@
+service: notion-integration
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-2
+  environment:
+    NOTION_API_KEY: ${env:NOTION_API_KEY}
+    NOTION_TODO_DATABASE_ID: ${env:NOTION_TODO_DATABASE_ID}
+
+functions:
+  addTodoItem:
+    handler: functions/addTodoItem.handler
+    memorySize: 512
+    timeout: 30
+    events:
+      - httpApi:
+          path: /todo-item
+          method: post
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  serverless-offline:
+    httpPort: 4000
