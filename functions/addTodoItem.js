@@ -75,10 +75,6 @@ exports.handler = async (event) => {
     console.log('Success! Entry added.');
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*', // Required for CORS support to work
-        'Access-Control-Allow-Credentials': true, // Required for cookies, authorization headers with HTTPS
-      },
       // update to use the correct response
       body: JSON.stringify(
         {

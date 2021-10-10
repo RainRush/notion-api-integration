@@ -1,3 +1,9 @@
+## [1.4.0] - 2021-10-10
+
+### Changed
+
+- Moved `httpApi.cors: true` from `functions` to `provider` in `serverless.yml`
+
 ## [1.3.0] - 2021-10-10
 
 ### Changed

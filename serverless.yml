@@ -4,6 +4,8 @@ provider:
   name: aws
   runtime: nodejs14.x
   region: ap-southeast-2
+  httpApi:
+    cors: true
   environment:
     NOTION_API_KEY: ${env:NOTION_API_KEY}
     NOTION_TODO_DATABASE_ID: ${env:NOTION_TODO_DATABASE_ID}
@@ -17,7 +19,6 @@ functions:
       - httpApi:
           path: /todo-items
           method: post
-          cors: true
   listTodoItems:
     handler: functions/listTodoItems.handler
     memorySize: 1024
@@ -26,7 +27,6 @@ functions:
       - httpApi:
           path: /todo-items
           method: get
-          cors: true
 
 plugins:
   - serverless-offline
