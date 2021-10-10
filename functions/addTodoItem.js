@@ -5,6 +5,8 @@ exports.handler = async (event) => {
   const databaseId = process.env.NOTION_TODO_DATABASE_ID;
 
   const { message } = JSON.parse(event.body);
+  console.log('message');
+  console.log(message);
 
   const {
     title,
@@ -71,19 +73,10 @@ exports.handler = async (event) => {
       parent: { database_id: databaseId },
       properties,
     });
-    console.log(response);
     console.log('Success! Entry added.');
-    return {
-      statusCode: 200,
-      // update to use the correct response
-      body: JSON.stringify(
-        {
-          message: 'Test response',
-        },
-        null,
-        2
-      ),
-    };
+    console.log('response');
+    console.log(response);
+    return response;
   } catch (error) {
     console.error(error.body);
   }

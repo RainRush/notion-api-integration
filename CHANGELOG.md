@@ -1,3 +1,9 @@
+## [1.4.1] - 2021-10-10
+
+### Changed
+
+- Updated the response of `addTodoItem` and `listTodoItems` back to the response of Notion
+
 ## [1.4.0] - 2021-10-10
 
 ### Changed

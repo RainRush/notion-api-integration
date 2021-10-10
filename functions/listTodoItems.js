@@ -8,19 +8,8 @@ exports.handler = async () => {
     const response = await notion.databases.query({
       database_id: databaseId,
     });
-    const { results } = response;
-    console.log(results.length);
-    return {
-      statusCode: 200,
-      // update to use the correct response
-      body: JSON.stringify(
-        {
-          message: 'Test response',
-        },
-        null,
-        2
-      ),
-    };
+    console.log(response);
+    return response;
   } catch (e) {
     console.error(e.body);
   }
